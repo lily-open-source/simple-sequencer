@@ -8,3 +8,6 @@
 int sensorPin   = A0;
 int sensorValue = 0;
 int deltime     = 0;
+
+unsigned long previousMillis = 0;
+const long interval = 100;
