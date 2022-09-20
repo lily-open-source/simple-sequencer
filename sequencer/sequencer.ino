@@ -14,26 +14,31 @@ void setup() {
 }
 
 void loop() {
-  sensorValue = analogRead(A0);
-  deltime = map(sensorValue, 0, 1024, 1, 255) * 50;
+  unsigned long currentMillis = millis();
 
-  if (digitalRead(push) == HIGH) {
-    digitalWrite(Relay1, LOW);
-    delay(deltime);
-    digitalWrite(Relay2, LOW);
-    delay(deltime);
-    digitalWrite(Relay3, LOW);
-    delay(deltime);
-    digitalWrite(Relay4, LOW);
-  }
+  if (currentMillis - previousMillis >= interval) {
+    sensorValue = analogRead(A0);
+    deltime = map(sensorValue, 0, 1024, 1, 255) * 15;
 
-  else {
-    digitalWrite(Relay4, HIGH);
-    delay(deltime);
-    digitalWrite(Relay3, HIGH);
-    delay(deltime);
-    digitalWrite(Relay2, HIGH);
-    delay(deltime);
-    digitalWrite(Relay1, HIGH);
+    if (digitalRead(push) == HIGH) {
+      digitalWrite(Relay1, LOW);
+      delay(deltime);
+      digitalWrite(Relay2, LOW);
+      delay(deltime);
+      digitalWrite(Relay3, LOW);
+      delay(deltime);
+      digitalWrite(Relay4, LOW);
+    }
+
+    if (digitalRead(push) == LOW) {
+      digitalWrite(Relay4, HIGH);
+      delay(deltime);
+      digitalWrite(Relay3, HIGH);
+      delay(deltime);
+      digitalWrite(Relay2, HIGH);
+      delay(deltime);
+      digitalWrite(Relay1, HIGH);
+    }
+    previousMillis = currentMillis;   
   }
 }
