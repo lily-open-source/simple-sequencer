@@ -67,6 +67,9 @@ graph TD
   N --> L
   E -- No --> D
 ```
+## Picture 
+
+![image](https://github.com/1999AZZAR/sequencer-esp/blob/master/sequencer.png)
 
 ## Usage and Customization
 To use this code, upload it to your microcontroller (e.g., Arduino) using the appropriate software. Ensure that the hardware connections are correct.
