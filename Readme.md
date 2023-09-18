@@ -1,5 +1,7 @@
 # Explanation 
 
+[![CodeFactor](https://www.codefactor.io/repository/github/1999azzar/sequencer-esp/badge)](https://www.codefactor.io/repository/github/1999azzar/sequencer-esp)
+
 ## Description
 This code controls four relays based on the input from an analog sensor and the state of a push button. The relays are used to control external devices connected to the corresponding pins on the microcontroller. The behavior of the relays is determined by the analog sensor value and the state of the push button.
 
